@@ -7,6 +7,6 @@ void main(){
     vec2 norPos=gl_FragCoord.xy/u_resolution;
     vec2 norMPos = u_mouse / u_resolution;
     float dis = distance(norPos, norMPos);
-    dis > 0.2 ? dis = 0.0 : dis = dis;
+    dis > 0.2  ? dis = 0.0 : dis = dis;
     gl_FragColor=vec4(dis+norPos.x,dis+norPos.y,.0,1.);
 }
