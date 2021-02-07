@@ -5,4 +5,11 @@
     ".tes.glsl": "tese",
     ".tcs.glsl": "tesc",
     ".gs.glsl": "geom"
+},
+"glsl-canvas.useCompactFormatter": false,
+"glsl-canvas.useFormatter": true,
+"glsl-canvas.textures": {
+    "0": "./QCat.png",
+    "1": "https://rawgit.com/actarian/plausible-brdf-shader/master/textures/noise/cloud-1.png",
+    "2": "https://rawgit.com/actarian/plausible-brdf-shader/master/textures/noise/cloud-2.jpg",        
 }
