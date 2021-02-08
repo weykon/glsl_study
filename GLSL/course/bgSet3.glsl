@@ -8,10 +8,15 @@ void main(){
     vec2 st=gl_FragCoord.xy/u_resolution;
     vec3 color=vec3(.0);
     
-    vec2 border=step(vec2(.2),st);
-    float pct=border.x*border.y;
+    // 左下角
+    vec2 bl=step(vec2(.2),st);
+    float pct=bl.x*bl.y;
     
-    color=vec3(pct);
+    // 右上角
+    vec2 tr=step(vec2(.2),1.0-st);
+    pct *= tr.x * tr.y;    
+
+    color=vec3(abs(pct-1.0));
     
     gl_FragColor=vec4(color,1.);
 }

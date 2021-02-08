@@ -1,30 +1,25 @@
+#ifdef GL_ES
 precision mediump float;
+#endif
+
 uniform vec2 u_resolution;
-uniform float u_time;
-uniform vec2 u_mouse;
-uniform sampler2D u_buffer0;
+uniform sampler2D uCat;
 
 void main(){
-    vec2 uv=gl_FragCoord.xy/u_resolution;
+    vec2 st=gl_FragCoord.xy/u_resolution;
+    vec3 color=vec3(.0);
+
+    // 左下角
+    vec2 bl=step(vec2(.2),st);
+    float pct=bl.x*bl.y;
     
-    uv-=.5;
-    
-    float c=clamp(-.25,.25,uv.x);
-    float c1=clamp(-.25,.25,uv.y);
-    c=abs(c);
-    c1=abs(c1);
-    
-    vec4 color0=texture2D(u_buffer0,uv);
-    
-    vec2 p=vec2(.0,.0);
-    
-    vec3 col=vec3(c,c,c);
-    
-    vec3 col1=vec3(c1,c1,c1);
-    
-    vec3 color=col+col1;
+    // 右上角
+    vec2 tr=step(vec2(.2),1.0-st);
+    pct *= tr.x * tr.y;    
+
+    vec4 pic = texture2D(uCat,st);
+
+    color=vec3(pic.x*pct,pic.y*pct,pic.z*pct);
     
     gl_FragColor=vec4(color,1.);
-    
 }
-
