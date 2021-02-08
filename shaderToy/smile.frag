@@ -2,7 +2,7 @@ precision mediump float;
 
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
-// uniform float u_time;
+uniform float u_time;
 
 float Circle(vec2 uv,vec2 p,float r,float blur){
     float d=length(uv-p);
