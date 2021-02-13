@@ -7,9 +7,9 @@
         ".tcs.glsl": "tesc",
         ".gs.glsl": "geom"
     },
-    "glsl-canvas.useCompactFormatter": true,
-    "glsl-canvas.useFormatter": true,
     "glsl-canvas.textures": {
         "0": "./qcat.png"
-    }
+    },
+    "glsl-canvas.useCompactFormatter": false,
+    "glsl-canvas.useFormatter": false
 }
